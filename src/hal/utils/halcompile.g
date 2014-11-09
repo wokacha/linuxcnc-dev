@@ -649,12 +649,12 @@ def build_usr(tempdir, filename, mode, origfilename):
     print >>f, "%s: %s" % (binname, filename)
     if len(extralibs):
         print >>f, "\t$(CC) $(EXTRA_CFLAGS) -URTAPI -U__MODULE__ -DULAPI -Os %s -o $@ $< -Wl,-rpath,$(LIBDIR) -L$(LIBDIR) -llinuxcnchal %s %s" % ( 
-        options.get("extra_compile_args", ""),
-        options.get("extra_link_args", ""), extralibs[0] )
+    	    options.get("extra_compile_args", ""),
+    	    options.get("extra_link_args", ""), ' '.join(extralibs) )
     else:
         print >>f, "\t$(CC) $(EXTRA_CFLAGS) -URTAPI -U__MODULE__ -DULAPI -Os %s -o $@ $< -Wl,-rpath,$(LIBDIR) -L$(LIBDIR) -llinuxcnchal %s" % (
-        options.get("extra_compile_args", ""),
-        options.get("extra_link_args", ""))
+    	    options.get("extra_compile_args", ""),
+    	    options.get("extra_link_args", ""))
     print >>f, "include %s" % find_modinc()
     f.close()
     result = os.system("cd %s && make -S %s" % (tempdir, binname))
@@ -675,7 +675,7 @@ def build_rt(tempdir, filename, mode, origfilename):
     print >>f, "EXTRA_CFLAGS += -I%s" % os.path.abspath(os.path.dirname(origfilename))
     print >>f, "EXTRA_CFLAGS += -I%s" % os.path.abspath('.')
     if len(extralibs):
-        print >>f, "EXTRA_CFLAGS += %s" % extralibs[0]
+        Error("extralib field(s) %s not valid for rt components" % ' '.join(extralibs ))
     f.close()
     if mode == INSTALL:
         target = "modules install"
