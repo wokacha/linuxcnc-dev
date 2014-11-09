@@ -1,0 +1,636 @@
+linuxcnc (1:2.8.0~pre1) wheezy; urgency=low
+
+  * Upcoming release, any year now!  Watch this space!
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Sun, 26 Oct 2014 23:17:34 -0600
+
+linuxcnc (1:2.7.0~pre2) wheezy; urgency=low
+
+  * Fixup release tag signing.
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Wed, 22 Oct 2014 08:16:57 -0600
+
+linuxcnc (1:2.7.0~pre1) wheezy; urgency=low
+
+  * Brand new trajectory planner!
+  * Support for the RT-Preempt realtime kernel.
+  * Other things!
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Tue, 21 Oct 2014 14:31:54 -0500
+
+linuxcnc (1:2.6.4) precise; urgency=low
+
+  * axis gui: fix shift-jog speed being too slow on inch configs displaying mm
+  * axis gui: fix UVW jogs being too fast by 25.4x, on inch configs displaying mm
+
+  * gmoccapy gui: fixed serious bug with PAUSE / RESUME / STOP
+  * gmoccapy gui: bug fixes, minor layout changes
+  * gmoccapy gui: support now also matchbox-keyboard
+
+  * hal: make 'halcmd save comp' order match original 'loadrt' order
+
+  * gladevcp tooledit widget: flush tool file to disk
+  * gladevcp tooledit widget: fix bugs with tool comment field
+  * gladevcp led widget: fix blinking in GLADE editor problem
+
+  * xhc-hb04: improve README
+
+  * emccalib: fix a bug in hal file parsing
+  * emccalib: enable search in POSTGUI_HALFILEs
+
+  * popupkeyboard: support standalone demonstration
+
+  * hm2: fix long-standing encoder velocity estimation error
+  * hm2: fix FPGA names for 5i24, 5i25, and 6i25
+
+  * sim_pin: remove special case (-0) in isnegative
+
+  * latency-test: fix a bug in "implied microseconds" mode
+
+  * docs: update download & install information
+  * docs: fix a copy/paste error in the hostmot2.9 manpage
+  * docs: give units of ini vars in homing docs
+  * docs: update stepper quickstart equation
+  * docs: remove description of removed 'blocks' component
+  * docs: update halshow description to remove outdated blocks component
+  * docs: change stepconf values so they cover most common drives
+  * docs: document some missing declarations in the comp tool
+  * docs: in comp, variables should be of type float, not double
+  * docs: update README build instructions to include autogen
+  * docs: add gmoccapy documentation
+  * docs: document milltask's "ini.*" hal pins
+  * docs: fix some pyvcp examples
+  * docs: fix a typo in the System Requirements document
+  * docs: fix a markup bug in the Developer Manual
+  * docs: fix motion-type description in motion manpage
+  * docs: add info about remapped code reading hal pins
+  * docs: fix some spellos in remap docs
+  * docs: describe our git workflow briefly
+
+  * tests: fix a transient failure in the halui-jogging test
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Sat, 01 Nov 2014 11:26:33 -0600
+
+linuxcnc (1:2.6.3) precise; urgency=low
+
+  * axis GUI: add ability to set default spindle speed
+  * gmoccapy GUI: iteration over None object message
+  * gmoccapy GUI: hal user message system introduced
+  * gmoccapy GUI: corrected message system
+  * xhc-hb04 jog pendant: move udev rule to the right place
+  * python: fix exception in MultiFileBuilder.set_translation_domain
+  * emccalib: fix bug #389 (not writing file)
+  * estop-latch: improve documentation; set default pin values
+  * hm2_7i90: remove some dead code
+  * hm2 sample configs: set HOME_SEQUENCE
+  * hm2 sample configs: let hm2-stepper estop when hm2 watchdog bites
+        (Closes: #391)
+  * docs: better description of 5420-5428
+  * docs: the remap inifile var is PYTHON_APPEND
+  * docs: all html links work now
+  * docs: section ids are externally accessible hyperlinks
+  * french doc update: default spindle speed
+  * french doc update: clarify comp's usage of count and names
+  * french doc update: fix startup code example
+  * packaging: recommend the correct hostmot2 package
+  * packaging: Debian testing (Jessie) requires tcl/tk 8.6
+  * build system: misc minor portability fixes
+  * tests: no need to track var file
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Fri, 05 Sep 2014 18:53:11 -0600
+
+linuxcnc (1:2.6.2) precise; urgency=low
+
+  * xhc-hb04: fix device file permissions
+
+  * pncconf: fix error with firmware with more than 5 sserial channels
+
+  * docs: update french translation
+  * docs: fix startup code example
+  * docs: misc minor fixes
+
+  * sample configs: fix sim/axis/gantry backplot display
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Sat, 09 Aug 2014 09:19:48 -0600
+
+linuxcnc (1:2.6.1) precise; urgency=low
+
+  * Fix stepconf - generating new configs now works on Debian Wheezy
+        and Ubuntu Precise.
+  * Touchy: Disable macro button if there aren't any macros defined
+  * Fix sim/axis/axis.ini sample config so the splash screen runs
+        without re-zeroing G54.
+  * minor docs improvements
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Mon, 04 Aug 2014 21:41:55 -0600
+
+linuxcnc (1:2.6.0) precise; urgency=low
+
+  * add missing copyright and GPL license on all files
+  * fix many file & directory permissions
+  * fix firmware paths in hm2 5i22 sample configs
+  * fix incorrect values on iocontrol.0.tool-prep-pocket (io and iov2)
+  * note gmoccapy runtime dependency on python-gst0
+  * axis: get interpreter address the right way
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Mon, 28 Jul 2014 19:21:10 -0600
+
+linuxcnc (1:2.6.0~pre5) precise; urgency=low
+
+  * Add G43.2 - this lets G-code sum an arbitrary number of tool length
+      offsets by calling G43.2 multiple times.
+
+  * add a demo config showing remapped G43.2
+
+  * touchy: add support for G43.2
+
+  * gmoccapy: screen2 bug fix
+  * gmoccapy: new hal pins for program progress
+  * gmoccapy: solved bug using change remap and tool edit widget
+  * gmoccapy: fix a bug with remapped tool change
+
+  * pncconf: fix an incompatibility between Mesa and LinuxCNC XMLs
+
+  * pid: change pins from IO to IN
+  * thcud: fix velocity tolerance calculation
+  * debounce: improve manpage
+  * parport: fix API manpage cut & paste errors
+
+  * docs: G43.1 works with all axes, not just XZ
+  * docs: French translation updates
+  * docs: misc minor cleanups
+  * docs: HAL floats are 64 bits wide now, not 32
+
+  * sim: fix 32-bit truncation of rdtsc on x86_64
+
+  * interp: print correct filename in message
+  * interp: need to initialize context_struct
+
+  * task: silence a warning with gcc 4.8 + boost 1.55.0
+  * task: don't link with ULAPISRCS
+  * task: safer message formatting
+
+  * rtapi: use proper type for rtapi_print_msg level
+  * rtapi: Remove unused define
+
+  * build-depend on libtk-img and make missing img::png a build-time failure
+
+  * build: Fix a crash on gcc4.7.2 (Debian Wheezy)
+  * build: fix inconsistency when multiple versions of tcl/tk are available
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Mon, 21 Jul 2014 09:52:26 -0600
+
+linuxcnc (1:2.6.0~pre4) precise; urgency=low
+
+  * fix several bugs with NURBS handling (G5, G5.1, G5.2)
+  * add a Rapid Override control (analogous to Feed Override)
+  * support moving 3, 6, or all 9 axes for a tool change
+
+  * add a driver for the WJ200 VFD
+  * add a driver for the Mesa 7i90 AnyIO board
+
+  * general mechatronics: fix a NULL pointer bug
+
+  * touchy: accept all axes for G43.1 TLOs
+  * gmoccapy: fix a couple of bugs
+
+  * comp: reject invalid .comp files that don't match the component name
+
+  * docs: add docs for G5, G5.1, G5.2 NURBS G-codes
+  * docs: clarify naming requirements of .comp files
+  * docs: update classic ladder manpage
+  * docs: add info on the servo axis calibration assistant in Axis GUI
+  * docs: misc minor fixes
+
+  * fix a "crawling scrollbar" cosmetic bug in linuxcnctop
+  * fix handling of shell metacharacters in .ini filenames
+  * fix auto-closing of directories in config picker
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Wed, 11 Jun 2014 21:39:31 -0600
+
+linuxcnc (1:2.6.0~pre3) precise; urgency=low
+
+  * HAL: make halcmd arrow syntax ('=>', '<=', '<=>') more strict
+      (matches manpage now)
+  * HAL: fix halcmd 'pin = value' and 'param = value' (matches manpage
+      now)
+  * HAL: don't clobber pin value when connecting to a net
+  * HAL: fix a cosmetic bug in signal memory allocation
+
+  * motion: add a pin giving the motion type (motion.motion_type)
+
+  * pid: default to using previous target to compute error.  This will
+      disturb existing tunings, so those with old configs who do not want
+      to re-tune may want to set pid.N.error-previous-target to false.
+
+  * hm2: fix a bug in 5i24 support on some motherboards
+  * hm2: fix 5i24 connector names
+  * hm2: expose encoder inputs (A, B, Index) as HAL pins
+
+  * fix a bug in the comp(1) tool that would let invalid .comp files
+      compile, but crash when the invalid code executed
+  * fix a crash in the biquad component (and add a test)
+  * fix a crash in the mesa 7i65 driver
+
+  * pickconfig: always allow creation of shortcuts (fixes bug #372)
+
+  * gmoccapy: add option to hide 4th axis
+  * gmoccapy: fix problem of pin_value changing on startup
+  * gmoccapy: let user change the DRO font size
+  * gmoccapy: reset error pin when user clears the message in GUI
+
+  * gladevcp: fix a bug in iconview
+
+  * sample configs: fix a bug in the gmoccapy config
+  * sample configs: make xhc-hb04 program-run button automatically
+      switch to auto mode
+
+  * docs: update French translation
+  * docs: update motion(9) manpage to match reality
+  * docs: fix a markup error in hostmot2(9) manpage
+  * docs: fix hostmot2(9) manpage encoder .rawcounts pin name
+  * docs: update hm2_pci(9) manpage list of supported boards
+  * docs: fix some bugs in the comp(1) documentation
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Sun, 25 May 2014 08:52:14 -0600
+
+linuxcnc (1:2.6.0~pre2) precise; urgency=low
+
+  * pncconf: fix bug with 7i43 address handling
+  * pncconf: fix off-by-one error on pin numbering of 5i25 boards
+  * General mechatronics driver: fix initialization for certain BIOSes
+  * General Mechatronics driver: Improve DAC from 8 bit to 14 bit resolution
+  * Axis: Fix mist and flood buttons (sf bug #371)
+  * Axis: Fix spindle control buttons
+  * gmoccapy: fix G92 as system bug
+  * GUIs: better error message when tryint to tune un-tuneable ini file
+  * gladevcp: fix a bug in the offsetpage widget
+  * gladevcp: screen 2 "bug" solved and gcode.lang is back
+  * halsh: initialize stubs library (this fixes builds on Ubuntu 14.04 Trusty)
+  * edge component: Fix a couple of minor bugs
+  * Add sample configs for Pico Systems PPMC with velocity estimation
+  * docs: add descriptions of the new spindle speed pins in motion
+  * docs: add descriptions of the new feed- and spindle-inhibit pins
+  * daisy.ngc: Moves are way too short to make tones, if in mm mode
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Sun, 27 Apr 2014 16:25:56 -0600
+
+linuxcnc (1:2.6.0~pre1) precise; urgency=low
+
+  * reorganized sample configs to improve clarity
+  * .ini files now support a '#INCLUDE' directive
+
+  * pncconf: bug fixes and improvements
+
+  * docs: lots of updates & improvements
+  * docs: removed untranslated placeholders, german & polish
+  * docs: updated italian translations (of the programs)
+
+  * GUI: Axis: allow feed rate override display to go up to 9999%
+  * GUI: Axis: XYUV foam cutter support
+  * GUI: touchy: wheel scrolling of program start point
+
+  * GUI: add new gmoccapy gui
+  * GUI: add new gscreen gui
+
+  * gladevcp: add new widgets: calculator, tool editor, source view,
+        dro, offset display, jogwheel, pyngcgui, etc
+
+  * HAL: haltcl now accepts -i or -ini
+  * HAL: halcmd now supports tilde expansion
+  * HAL: halscope now shows the first derivative of probe channels
+  * HAL: hal_glib got a number of new signals
+
+  * HAL: stepgen now supports 16 channels (up from 8 in 2.5)
+  * HAL: gs2 VFD driver now supports configurable acceleration and
+        deceleration, and has support for a braking resistor
+  * HAL: halui now switches to manual mode automatically when the user
+        requests jogging
+
+  * HAL: new drivers:
+      * VFS11 VFD
+      * Delta VFD-B
+      * General Mechatronics 6 axis motion control card
+      * xhc-hb04 USB jog pendant
+
+  * HAL: new components:
+      * mux_generic: generic multiplexer, any number of pins, any data type
+      * lincurve: linearization curve lookup table
+      * matrix_kb: matrix keyboard driver
+      * mb2hal: generic Modbus-to-HAL interface
+      * orient: works with M19 to control spindle position
+      * sim-encoder: simulate an encoder, for useful for testing
+      * thcud: torch height control for plasma
+
+  * Hostmot2: add support for 5i24 AnyIO board
+  * Hostmot2: add support for buffered SPI
+  * Hostmot2: add support for the Mesa 7i65 (bspi 8xServo)
+  * Hostmot2: add support for uarts
+  * Hostmot2: add support for serial encoders (ssi, biss, and fanuc)
+  * Hostmot2: add support for table-mode stepgens
+  * Hostmot2: add support for DPLL
+  * Hostmot2: detect & report encoder quadrature error
+  * Hostmot2: improved support for encoders (configurable filter rate)
+  * Hostmot2: improved support for muxed encoders (configurable skew rate)
+  * Hostmot2: changed handling of 8i20 and 7i64 (.hal file changes needed!)
+
+  * interp: G-codes can now be remapped
+  * interp: added read-only named parameters (#<_x> etc)
+  * interp: added M19 (orient spindle) and an orient component
+  * interp: added saving and restoring of modal G-code state with M70-M73
+  * interp: bug fixes in O-word handling
+  * interp: add python subroutines
+
+  * motion: coolant and lube are now user-controllable at all times
+  * motion: add spindle speed inihibit and feed inhibit input pins
+  * motion: add spindle absolute speed output pins
+  * motion: rapid velocity now ignores feed override setting
+
+  * rtapi: misc bug fixes
+
+  * removed usrmot (buggy & unused)
+  * removed freqgen component, it's been replaced by stepgen's
+        velocity mode
+
+  * build: simplified our usage of libmodbus
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Wed, 16 Apr 2014 21:12:39 -0600
+
+linuxcnc (1:2.5.4) lucid; urgency=low
+
+  * Build: update dependencies for Debian 7
+  * Docs: many fixes and updates
+  * HAL: blend: fix docs to match the real behavior
+  * HAL: edge: fix incorrect edge trigger at startup: Bug #346
+  * HAL: ilowpass: handle encoder counter overflows properly
+  * HAL: lcd: fix formatting when no format length is specified
+  * HAL: new components bin2gray, gray2bin for Gray code conversion
+  * HAL: new components bitwise and bitslice, for bitwise math operations
+  * HAL: pcl720: fix in-not pins
+  * HAL: thc: fix incorrect calculation of velocity tolerance: Bug #348
+  * Hostmot2: document ability to have multiple 7i43 cards
+  * Hostmot2: fix for PCI transfers on Linux 3.x kernels
+  * Hostmot2: fix resolver index emulation/detection
+  * Hostmot2: fix resolver total brokenness on 64-bit builds
+  * Interpreter: fix crash when returning from a subroutine, to a file
+    that has been deleted: Bug #357
+  * Interpreter: fix VW-plane (G19.1) canned cycles
+  * NGCGUI: Always apply tool offset when loading a tool
+  * NGCGUI: Fix qpocket stepover, ramping for mm users
+  * NML: fix remote clients talking to linuxcncserver
+  * Pncconf: allow setting the number of classicladder bits and words
+  * Pncconf: fix configurations requesting gladevcp panels without
+    spindle speed displays
+  * Pncconf: fix 7i43 address designation: Bug #358
+  * Pncconf: fix 5i25+prob_rfx2 pin numbering problem: Bug #331
+  * Pncconf: fix testing of smart-serial based spindles
+  * Pncconf: place STEPGEN_MAXVEL/STEPGEN_MAXACCEL values in the ini
+  * PPMC: Add new sample config showing encoder velocity estimation
+  * PyVCP: in a spinbox, allow entering a value with Return: Bug #364
+  * Stepconf: better defaults for axis-test distances
+  * Stepconf: fix spindle-at-speed connection
+  * Task: fix several problems with M61 (set currently-loaded tool)
+  * Touchy: MDI support for M61 Q
+  * Touchy: MDI support for multi-turn arcs
+  * TP: fix a minor acceleration constraint violation in some arcs
+
+ -- Chris Radek <chris@timeguy.com>  Thu, 17 Apr 2014 11:49:12 -0500
+
+linuxcnc (1:2.5.3) lucid; urgency=low
+
+  * AXIS: fix disable/enable of the toolbar's reload button
+  * BUILD: fix linking on 32 bit x86 debian 7.1
+  * Configs: use names= everywhere to make the sim configs clearer
+  * Docs: Many improvements
+  * HAL: clarkeinv: allow rotation of the input vector
+  * HAL: sim_pin: add support for u32, s32, float types
+  * HAL: abs_s32: don't unnecessarily require floating point
+  * HAL: comp: fix option userinit
+  * HAL: comp: improve handling of build failures and error reporting
+  * HAL: twopass: improve error reporting
+  * Hostmot2: fix smart serial port shutdown
+  * Interpreter: Fix bug 315 part 2, O-call through named parameter
+  * Kins: replace 5axiskins.c, used by a sample config
+  * Kins: 5axiskins: remove misleading tool-length pin
+  * Motion: allow for floating point in the base thread
+  * PPMC: add encoder timestamp velocity estimation
+  * PPMC: selectable encoder filter clock
+  * PyVCP: fix several behaviors in the dial widget
+  * Task: fix MDI-queueing problems
+  * USC: new sample config for Pico USC with encoders
+  * linuxcncrsh: many stability fixes
+  * pncconf: fix 5i25 GPIO numbering
+  * pncconf: fix default PDM rate
+  * pncconf: fix open loop test
+  * pncconf: fix incorrect zh_CN translation which broke millimeter mode
+
+ -- Chris Radek <chris@timeguy.com>  Tue, 23 Jul 2013 12:34:46 -0500
+
+linuxcnc (1:2.5.2) lucid; urgency=low
+
+  * AXIS: Allow the setting of the top end of the Max Velocity slider
+    according to [DISPLAY]MAX_LINEAR_VELOCITY as the docs say
+  * Components: Fix mux16's debounce function
+  * Components: LCD character display driver
+  * Components: New multiclick component detects single, double, triple clicks
+  * Docs: Many improvements
+  * Gremlin: Better error reporting for gcode errors
+  * Gremlin: Fix rotated axes display
+  * Halui: Include tool length offsets in relative position outputs
+  * Hostmot2: Fixes to sserial
+  * Kins: Fix teleop jogging of ABC axes in the negative direction
+  * Modbus: Fix TCP communication time out error
+  * New config: Gecko G540
+  * New config: Smithy 1240combined_mm
+  * PID: Optional new error-previous-target mode to reduce ferrors detected
+    by motion.  This is especially useful for torque-mode loops and those
+    tunings that use large I gains
+  * pncconf: Many fixes
+  * PPMC: Better error checking for hardware problems causing miscommunication
+  * Tool Table: Many fixes to tool table handling, making tool tables on
+    nonrandom setups using mismatched tool and pocket numbers work correctly
+  * Translations: German for tooledit
+  * Translations: Many improvements to French
+  * Utilities: new latencyhistogram program that shows details about latency
+  * Utilities: sim_pin, a script that simulates writing to hal pins
+
+ -- Chris Radek <chris@timeguy.com>  Sun, 03 Mar 2013 17:07:57 -0600
+
+linuxcnc (1:2.5.1) lucid; urgency=low
+
+  * Motion: fix incorrect spindle direction after G43 in CSS+M4 mode
+  * Interpreter: allow G10 L1 to set front/back angles when not 
+    also changing offsets
+  * Interpreter: correctly report G96/G97 mode to the UI
+  * Interpreter: explicitly set the default spindle mode at startup
+  * task: fix incorrect spindle speed display when switching mode
+    (Manual/MDI)
+  * PPMC: fix a bug that would cause missing encoder velocity pins on
+    some versions
+  * Hostmot2: Fix a couple of bugs affecting sserial (crash on
+    shutdown, memory leak)
+  * Hostmot2: Add support for 6i25
+  * AXIS: fix a surprise jog when the jog increment combobox was open
+  * AXIS: show S word in active gcode pane
+  * AXIS: rebranding
+  * Touchy: rebranding, change program path to ~/linuxcnc/nc_files
+  * Docs: improvements/clarifications to the halui.1 manpage
+  * Docs: improvements/clarifications to the gladevcp docs
+  * Docs: improvements/clarifications to the halcmd docs
+  * Docs: improvements/clarifications to the gcode docs
+  * Docs: fix misc typos, misspellings, grammar, and markup bugs
+  * Docs: updates to French translations
+  * GladeVCP: fix EMC_Action_Open
+  * GladeVCP: new default-value example
+  * tooledit: save/restore geometry, allow sorting on specific columns
+  * tooledit: bugfixes and i18n
+  * ngcgui: minor fixes and additions
+  * pncconf: lots of bug fixes and incremental improvements
+  * portability fix for Ubuntu Precise 12.04 LTS
+  * portability fix for Fedora 16
+  * Calibration: fix missing entries in tuning/calibration screens
+  * emcrsh: fix incorrect relative position report for some offset settings
+  * time.comp: fix hours wrapping at 60
+
+ -- Chris Radek <chris@timeguy.com>  Sun, 29 Jul 2012 13:48:25 -0500
+
+linuxcnc (1:2.5.0) lucid; urgency=low
+
+  * AXIS: dynamic tabs can embed other applications, including virtual
+    control panels
+  * AXIS: make the gcode readout resizable
+  * AXIS: many speedups in preview generation
+  * AXIS: new OpenGL preview with antialiased fonts
+  * AXIS: optional blending in the program preview can make very complex
+    programs easier to see
+  * AXIS: prompt when homing a joint that's already homed
+  * AXIS: Selectable tool touch off to workpiece or fixture
+  * AXIS: show all offsets and rotation separately in the BIG DRO
+  * AXIS: show G5x and G92 offsets graphically in the preview
+  * AXIS: user-configurable MDI history file
+  * AXIS: A comment (AXIS,notify,message) will print "message" when the
+    preview is generated, instead of just at run-time.
+
+  * Configs: many configuration updates for Smithy machines
+  * Configs: update motenc sample configs for encoder index
+  * Configs: add filtering (image-to-gcode etc) to hostmot2 samples
+  * Configs: univpwm sample uses new encoder velocity for pid
+
+  * GladeVCP: a new framework for making virtual control panels with the
+    Glade screen designer
+
+  * Gremlin: AXIS's program preview is now separated out as gremlin,
+    for use with GladeVCP/Touchy/etc.
+
+  * HAL: fix rare problem with freqgen output getting stuck "on"
+  * HAL: gearchange component: support up to 32 gears
+  * HAL: make commanded (unaffected by spindle override) spindle speed
+    available on a pin, for gear selection etc.
+  * HAL: make limit3 parameters into pins
+  * HAL: new axis.N.motor-offset pins can be used to detect position loss
+    between homings
+  * HAL: new component bldc_sine: commutation for BLDC with encoder feedback
+  * HAL: new mux16 component
+  * HAL: new time comp, which converts seconds to hr/min/sec
+  * HAL: new watchdog component
+  * HAL: remove deprecated hal_m5i20 driver
+  * HAL: new component for ShuttleXpress USB jog dongle
+  * HAL: support names= options for encoder_ratio, sim_encoder, at_pid, siggen
+  * HAL: a new component, message, to display user messages from HAL
+  * HAL: a new component, multiswitch, to toggle through bits with one button
+
+  * Halshow: add menu with load/save/exit
+  * Halshow: fix the tree to not cut off after a certain depth
+
+  * HAL: standardize on maximum hal name length
+
+  * HALUI: allow direct-value input to spindle and feed overrides and
+    max velocity
+  * HALUI: handle the situation better when many command inputs change
+    simultaneously
+
+  * Hostmot2: fix a rare problem in stepgen mode setting
+  * Hostmot2: fix stepgen moving VERY slowly when it should have been
+    stopped
+  * Hostmot2: handle failed card registration better
+  * Hostmot2: support for multiplexed encoders like on the 7i48
+  * Hostmot2: support for onboard diagnostic LEDs
+  * Hostmot2: support for three phase PWM
+  * Hostmot2: improve watchdog reliability and defaults
+
+  * Interpreter: fixes to always use . for a decimal, no matter the locale
+  * Interpreter: fix G83 peck retract to match fanuc
+  * Interpreter: fix G98/G99 to match fanuc retract planes behavior
+  * Interpreter: fix "run from line" when the start line is between a
+    sub definition and its call
+  * Interpreter: give correct errors when rotary axes are commanded to
+    move in canned cycles
+  * Interpreter: improve arc endpoint radius-mismatch error checking
+  * Interpreter: maintain G5x and G92 offsets separately
+  * Interpreter: make current position including all offsets and in the
+    current program units available in parameters 5420-5428
+  * Interpreter: make EMC version available in named parameters _vminor,
+    _vmajor
+  * Interpreter: make G92 offset rotated coordinate systems correctly
+  * Interpreter: make more errors translatable
+  * Interpreter: many fixes to allow O-call of subroutines from MDI mode
+  * Interpreter: many new tests in the test suite, including the ability
+    to verify errors
+  * Interpreter: new G10 L11 code for tool touch off to fixture instead
+    of active work coordinate system
+  * Interpreter: new unary function EXISTS tells whether a certain
+    parameter exists
+  * Interpreter: search path for subroutines: [RS274NGC]SUBROUTINE_PATH
+  * Interpreter: search path for user M codes: [RS274NGC]USER_M_PATH
+  * Interpreter: detect and error on malformed O-if[] statements
+
+  * IOcontrol: make aborting tool changes work
+
+  * Kinematics: several improvements to the general serial kinematics module
+
+  * Motenc, VTI, Opto_ac5: PCI-related update for new kernel versions
+
+  * Motion: allow translations of more error messages
+  * Motion: fix stuttering motion in NURBS
+  * Motion: support for indexing/locking rotary axes
+
+  * ngcgui: many new features and bugfixes
+
+  * PID: accept external command-deriv and feedback-deriv connections to
+    use a high quality velocity signal when it is available
+
+  * pncconf: many new features and bugfixes
+
+  * PPMC: improve error messages when cards are not found
+
+  * Probing: correctly abort motion when the probe trips during a non-probe
+    MDI command
+
+  * Rebranding: rename EMC to LinuxCNC
+
+  * TkEMC: display and allow entry of all tool offsets
+  * TkEMC: in Set Coordinates, display the correct axes
+  * TkEMC: only display active axes
+  * TkEMC: show coordinate system in offset widget
+  * TkEMC: show work offsets for all axes
+
+  * Touchy: add a spindle speed readout on the manual tab
+  * Touchy: dynamic tabs can embed other applications, including virtual
+    control panels
+  * Touchy: macro capability that uses MDI O-call
+  * Touchy: make single-block switch work like feed hold
+  * Touchy: save maximum velocity (MV) value across runs
+  * Touchy: Selectable tool touch off to workpiece or fixture
+  * Touchy: show all offsets separately in the status information
+  * Touchy: show the total number of lines in the loaded program
+  * Touchy: show which tools are in which pockets
+  * Touchy: support for metric configurations
+  * Touchy: support panel indicators for status readout
+  * Touchy: use appropriate jog and maxvel increments for metric and degrees
+  * Touchy: turning the wheel during a continuous jog changes the current 
+    jog speed
+
+  * add a G code language spec for gedit
+  * add latencyplot, a strip-chart type display of latency test results
+
+ -- Chris Radek <chris@timeguy.com>  Fri, 30 Mar 2012 13:20:02 -0500
